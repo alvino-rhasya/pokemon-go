@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_apps/models/pokemon.dart';
 import 'package:flutter_apps/widgets/type_chip.dart';
 
 class PokemonList extends StatelessWidget {
-  const PokemonList({super.key});
+  final Pokemon pokemon;
+  const PokemonList({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {
@@ -11,16 +13,16 @@ class PokemonList extends StatelessWidget {
       leading: ClipRRect(
         borderRadius:BorderRadiusGeometry.circular(999) ,
         child: Hero(
-          tag: 'pokemon-image',
+          tag: pokemon.name,
           child: Image.asset(
-            'assets/bulbasaur.jpg', 
+            pokemon.image, 
             width: 56,
             height: 56,
             fit: BoxFit.cover,
           ),
         ),
       ),
-      title: Text('Bulbasaur'),
+      title: Text(pokemon.name),
       subtitle: TypeChip(),
       trailing: Icon(Icons.favorite_border_outlined),
     );

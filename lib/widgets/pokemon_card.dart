@@ -8,6 +8,8 @@ class PokemonCard extends StatelessWidget {
   const PokemonCard({super.key, required this.pokemon});
 
   @override
+
+  // function intent ke detail_page
   Widget build(BuildContext context) {
     void _detailPage(Pokemon pokemon) {
       Navigator.push(

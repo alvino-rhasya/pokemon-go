@@ -24,13 +24,12 @@ class _HomePageState extends State<HomePage> {
         leading: Icon(Icons.arrow_back_ios_new_outlined),
         actions: [Icon(Icons.favorite), SizedBox(width: 10)],
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-        ),
-        itemBuilder: (_, index) => PokemonCard(pokemon: pokemon[index]),
-        itemCount: pokemon.length, // sesuai jumlah data pokemon
-      ),
+      body: ListView.builder(
+        itemCount: pokemon.length,
+        itemBuilder: (BuildContext context, int index) {
+          return PokemonList(pokemon: pokemon[index]);
+        },
+      )
     );
   }
 }
