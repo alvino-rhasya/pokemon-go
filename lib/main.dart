@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/home-page' :(context) => HomePage(),
-        '/detail-page' :(context) => DetailPage()
       },
     );
   }

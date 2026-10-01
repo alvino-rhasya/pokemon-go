@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   final List<Pokemon> pokemon = dataPokemon;
 
   @override
@@ -23,15 +22,14 @@ class _HomePageState extends State<HomePage> {
         title: Text('Pokemon Go'),
         centerTitle: true,
         leading: Icon(Icons.arrow_back_ios_new_outlined),
-        actions: [
-          Icon(Icons.favorite), 
-          SizedBox(width: 10)
-        ],
+        actions: [Icon(Icons.favorite), SizedBox(width: 10)],
       ),
       body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
         itemBuilder: (_, index) => PokemonCard(pokemon: pokemon[index]),
-        itemCount: pokemon.length,
+        itemCount: pokemon.length, // sesuai jumlah data pokemon
       ),
     );
   }

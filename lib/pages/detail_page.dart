@@ -1,21 +1,23 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_apps/models/pokemon.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  final Pokemon pokemon;
+  const DetailPage({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Nama Pokemon')),
+      appBar: AppBar(title: Text(pokemon.name)),
       body: Column(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(20),
-              child: Image.asset('assets/pikachu.jpg'),
+              child: Image.asset(pokemon.image),
             ),
           ),
           Container(
@@ -48,17 +50,17 @@ class DetailPage extends StatelessWidget {
                       style: BorderStyle.solid,
                     ),
                   ),
-                  child: Text('Water'),
+                  child: Text(pokemon.type),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    'Base Power : 320',
+                    'Base Power : ${pokemon.basePower}',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
-                  'Deskripsi',
+                  pokemon.description,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 Text('Menyimpan listrik di dalam kantung pipinya yang berwarna merah. Ia akan melepaskan sengatan listrik bertegangan tinggi saat merasa terancam.'),

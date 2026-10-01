@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/models/pokemon.dart';
+import 'package:flutter_apps/pages/detail_page.dart';
 import 'package:flutter_apps/widgets/type_chip.dart';
 
 class PokemonCard extends StatelessWidget {
@@ -8,14 +9,23 @@ class PokemonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void _detailPage(Pokemon pokemon) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => DetailPage(pokemon: pokemon)),
+      );
+    }
+
     return InkWell(
-      onTap: (){},
+      onTap: () {
+        _detailPage(pokemon);
+      },
       child: SizedBox(
         height: 100,
         child: Card(
           elevation: 6,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30)
+            borderRadius: BorderRadius.circular(30),
           ),
           clipBehavior: Clip.antiAlias,
           child: Column(
