@@ -23,7 +23,7 @@ class PokemonList extends StatelessWidget {
         ),
       ),
       title: Text(pokemon.name),
-      subtitle: TypeChip(),
+      subtitle: TypeChip(type: pokemon.type),
       trailing: Icon(Icons.favorite_border_outlined),
     );
   }
