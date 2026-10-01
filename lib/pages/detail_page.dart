@@ -60,10 +60,10 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  pokemon.description,
+                  'Description',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
-                Text('Menyimpan listrik di dalam kantung pipinya yang berwarna merah. Ia akan melepaskan sengatan listrik bertegangan tinggi saat merasa terancam.'),
+                Text(pokemon.description),
                 SizedBox(height: 8,),
                 Text('Skills', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
