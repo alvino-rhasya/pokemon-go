@@ -9,7 +9,16 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(pokemon.name)),
-      body: SingleChildScrollView(
+      body: LayoutBuilder(builder: (context, constraints) {
+        if (constraints.maxWidth > 768) {
+          return Row(
+            children: [
+              Expanded(child: Hero(tag: pokemon.name, child: Image.asset(pokemon.image))),
+            ],
+          );
+        }
+        else {
+          return  SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Padding(
@@ -97,7 +106,9 @@ class DetailPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      );
+        }
+      },),
     );
   }
 }
