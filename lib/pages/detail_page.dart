@@ -1,16 +1,22 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/models/pokemon.dart';
 import 'package:flutter_apps/widgets/type_chip.dart';
- 
+
 class DetailPage extends StatelessWidget {
   final Pokemon pokemon;
- 
+
   const DetailPage({super.key, required this.pokemon});
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(pokemon.name, style: TextStyle(fontFamily: 'PokemonHollow'),)),
+      appBar: AppBar(
+        title: Text(
+          pokemon.name,
+          style: TextStyle(fontFamily: 'PokemonHollow'),
+        ),
+      ),
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth > 768) {
@@ -203,32 +209,65 @@ class DetailPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 5),
-                        Wrap(
-                          children: pokemon.skills
-                              .map(
-                                (e) => Container(
-                                  width: 140,
-                                  padding: EdgeInsets.all(4),
-                                  margin: EdgeInsets.symmetric(vertical: 4),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      width: 0.1,
-                                      color: Colors.black,
-                                      style: BorderStyle.solid,
+                        Row(
+                          children: [
+                            Wrap(
+                              children: pokemon.skills
+                                  .map(
+                                    (e) => Container(
+                                      width: 140,
+                                      padding: EdgeInsets.all(4),
+                                      margin: EdgeInsets.symmetric(vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(20),
+                                        border: Border.all(
+                                          width: 0.1,
+                                          color: Colors.black,
+                                          style: BorderStyle.solid,
+                                        ),
+                                      ),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.star),
+                                          SizedBox(width: 5),
+                                          Text(e),
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        CarouselSlider.builder(
+                          options: CarouselOptions(
+                            aspectRatio: 2.0,
+                            enlargeCenterPage: false,
+                            viewportFraction: 1,
+                          ),
+                          itemCount: pokemon.movies.length,
+                          itemBuilder: (context, index, realIdx) {
+                            final int first = index * 2;
+                            final int second = first + 1;
+                            return Row(
+                              children: [first, second].map((idx) {
+                                return Expanded(
+                                  flex: 1,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                      horizontal: 10,
+                                    ),
+                                    child: Image.network(
+                                      pokemon.movies[idx],
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.star),
-                                      SizedBox(width: 5),
-                                      Text(e),
-                                    ],
-                                  ),
-                                ),
-                              )
-                              .toList(),
+                                );
+                              }).toList(),
+                            );
+                          },
                         ),
                       ],
                     ),
