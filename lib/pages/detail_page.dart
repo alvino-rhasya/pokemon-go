@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apps/models/pokemon.dart';
 import 'package:flutter_apps/widgets/type_chip.dart';
-
+ 
 class DetailPage extends StatelessWidget {
   final Pokemon pokemon;
-
+ 
   const DetailPage({super.key, required this.pokemon});
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(pokemon.name, style: TextStyle(fontFamily: 'Pokemon', fontWeight: FontWeight.w900),)),
+      appBar: AppBar(title: Text(pokemon.name, style: TextStyle(fontFamily: 'PokemonHollow'),)),
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth > 768) {
@@ -22,8 +22,9 @@ class DetailPage extends StatelessWidget {
                     child: Hero(
                       tag: pokemon.name,
                       child: ClipRRect(
-                        borderRadius: BorderRadiusGeometry.circular(25),
-                        child: Image.asset(pokemon.image, fit: BoxFit.cover,)),
+                        borderRadius: BorderRadiusGeometry.circular(40),
+                        child: Image.asset(pokemon.image, fit: BoxFit.cover),
+                      ),
                     ),
                   ),
                 ),
@@ -182,6 +183,7 @@ class DetailPage extends StatelessWidget {
                         Text(
                           'Deskripsi',
                           style: TextStyle(
+                            fontFamily: 'Poppins',
                             fontSize: 19,
                             fontWeight: FontWeight.bold,
                           ),

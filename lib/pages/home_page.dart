@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pokemon Go'),
+        title: Text('Pokemon Go', style: TextStyle(fontFamily: 'PokemonSolid', color: Colors.amber, fontSize: 32),),
         centerTitle: true,
         leading: Icon(Icons.arrow_back_ios_new_outlined),
         actions: [Icon(Icons.favorite), SizedBox(width: 10)],

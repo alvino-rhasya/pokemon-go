@@ -6,6 +6,7 @@ class Pokemon {
   final int basePower;
   final String description;
   final List<String> skills;
+  final String movies;
 
   Pokemon({
     required this.name,
@@ -14,6 +15,7 @@ class Pokemon {
     required this.basePower,
     required this.description,
     required this.skills,
+    required this.movies,
   });
 
   //  CTRL + ALT + L => REFORMAT CODE
