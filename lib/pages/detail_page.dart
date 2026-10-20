@@ -3,19 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_apps/models/pokemon.dart';
 import 'package:flutter_apps/widgets/type_chip.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPage extends StatefulWidget {
   final Pokemon pokemon;
 
   const DetailPage({super.key, required this.pokemon});
 
   @override
+  State<DetailPage> createState() => _DetailPageState();
+}
+
+class _DetailPageState extends State<DetailPage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          pokemon.name,
+          widget.pokemon.name,
           style: TextStyle(fontFamily: 'PokemonHollow'),
         ),
+        actions: [
+          Icon(Icons.favorite_border_rounded),
+          SizedBox(width: 15),
+        ],
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -26,10 +35,10 @@ class DetailPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Hero(
-                      tag: pokemon.name,
+                      tag: widget.pokemon.name,
                       child: ClipRRect(
                         borderRadius: BorderRadiusGeometry.circular(40),
-                        child: Image.asset(pokemon.image, fit: BoxFit.cover),
+                        child: Image.asset(widget.pokemon.image, fit: BoxFit.cover),
                       ),
                     ),
                   ),
@@ -37,79 +46,118 @@ class DetailPage extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          pokemon.name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            color: Colors.black,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.pokemon.name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 15),
-                        TypeChip(type: pokemon.type),
-                        SizedBox(height: 15),
-                        Text(
-                          'Base Power: ${pokemon.basePower}',
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                          SizedBox(height: 15),
+                          TypeChip(type: widget.pokemon.type),
+                          SizedBox(height: 15),
+                          Text(
+                            'Base Power: ${widget.pokemon.basePower}',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'Deskripsi',
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                          SizedBox(height: 15),
+                          Text(
+                            'Deskripsi',
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 3),
-                        Text(
-                          pokemon.description,
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(fontSize: 15),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          'Skill',
-                          style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.bold,
+                          SizedBox(height: 3),
+                          Text(
+                            widget.pokemon.description,
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(fontSize: 15),
                           ),
-                        ),
-                        SizedBox(height: 5),
-                        Wrap(
-                          children: pokemon.skills
-                              .map(
-                                (e) => Container(
-                                  width: 140,
-                                  padding: EdgeInsets.all(4),
-                                  margin: EdgeInsets.symmetric(vertical: 4),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      width: 0.1,
-                                      color: Colors.black,
-                                      style: BorderStyle.solid,
+                          SizedBox(height: 15),
+                          Text(
+                            'Skill',
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            children: [
+                              Wrap(
+                                children: widget.pokemon.skills
+                                    .map(
+                                      (e) => Container(
+                                        width: 140,
+                                        padding: EdgeInsets.all(4),
+                                        margin: EdgeInsets.symmetric(
+                                          vertical: 4,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(
+                                            20,
+                                          ),
+                                          border: Border.all(
+                                            width: 0.1,
+                                            color: Colors.black,
+                                            style: BorderStyle.solid,
+                                          ),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            Icon(Icons.star),
+                                            SizedBox(width: 5),
+                                            Text(e),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                    .toList(),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 15),
+                          CarouselSlider.builder(
+                            options: CarouselOptions(
+                              aspectRatio: 2.0,
+                              enlargeCenterPage: false,
+                              viewportFraction: 1,
+                            ),
+                            itemCount: widget.pokemon.movies.length ~/ 2,
+                            itemBuilder: (context, index, realIdx) {
+                              final int first = index * 2;
+                              final int second = first + 1;
+                              return Row(
+                                children: [first, second].map((idx) {
+                                  return Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                      ),
+                                      child: Image.network(
+                                        widget.pokemon.movies[idx],
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.star),
-                                      SizedBox(width: 5),
-                                      Text(e),
-                                    ],
-                                  ),
-                                ),
-                              )
-                              .toList(),
-                        ),
-                      ],
+                                  );
+                                }).toList(),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -123,7 +171,7 @@ class DetailPage extends StatelessWidget {
                     padding: EdgeInsetsGeometry.symmetric(horizontal: 14.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(pokemon.image),
+                      child: Image.asset(widget.pokemon.image),
                     ),
                   ),
                   Container(
@@ -146,7 +194,7 @@ class DetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          pokemon.name,
+                          widget.pokemon.name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 24,
@@ -169,7 +217,7 @@ class DetailPage extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            pokemon.type,
+                            widget.pokemon.type,
                             style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -178,7 +226,7 @@ class DetailPage extends StatelessWidget {
                         ),
                         SizedBox(height: 15),
                         Text(
-                          'Base Power: ${pokemon.basePower}',
+                          'Base Power: ${widget.pokemon.basePower}',
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
@@ -196,7 +244,7 @@ class DetailPage extends StatelessWidget {
                         ),
                         SizedBox(height: 3),
                         Text(
-                          pokemon.description,
+                          widget.pokemon.description,
                           textAlign: TextAlign.justify,
                           style: TextStyle(fontSize: 15),
                         ),
@@ -212,7 +260,7 @@ class DetailPage extends StatelessWidget {
                         Row(
                           children: [
                             Wrap(
-                              children: pokemon.skills
+                              children: widget.pokemon.skills
                                   .map(
                                     (e) => Container(
                                       width: 140,
@@ -240,34 +288,23 @@ class DetailPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 5),
-                        CarouselSlider.builder(
+                        SizedBox(height: 15),
+                        CarouselSlider(
                           options: CarouselOptions(
                             aspectRatio: 2.0,
-                            enlargeCenterPage: false,
-                            viewportFraction: 1,
+                            enlargeCenterPage: true,
+                            scrollDirection: Axis.horizontal,
+                            autoPlay: true,
                           ),
-                          itemCount: pokemon.movies.length,
-                          itemBuilder: (context, index, realIdx) {
-                            final int first = index * 2;
-                            final int second = first + 1;
-                            return Row(
-                              children: [first, second].map((idx) {
-                                return Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    margin: EdgeInsets.symmetric(
-                                      horizontal: 10,
-                                    ),
-                                    child: Image.network(
-                                      pokemon.movies[idx],
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                );
-                              }).toList(),
-                            );
-                          },
+                          items: widget.pokemon.movies
+                              .map(
+                                (item) => Image.network(
+                                  item,
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
+                                ),
+                              )
+                              .toList(),
                         ),
                       ],
                     ),
