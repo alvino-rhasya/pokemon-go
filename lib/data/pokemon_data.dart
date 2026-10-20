@@ -1,124 +1,313 @@
-import 'package:flutter_apps/models/pokemon.dart';
-
+import '../models/pokemon.dart';
+ 
 final List<Pokemon> dataPokemon = [
   // 1
   Pokemon(
     name: "Bulbasaur",
     image: "assets/bulbasaur.jpg",
-    type: "Grass",
+    type: "Grass/Poison",
     description:
-    "Bulbasaur adalah Pokémon bertipe Rumput dan Racun yang memiliki tubuh berwarna hijau kebiruan, empat kaki pendek, mata merah, serta bintik-bintik hijau tua di tubuhnya. Ciri khas utamanya adalah benih tanaman yang tumbuh di punggungnya sejak lahir. Benih tersebut perlahan membesar seiring pertumbuhan tubuhnya dan menyimpan energi yang dibutuhkan untuk berkembang. Bulbasaur juga dapat menyerap energi dari sinar matahari untuk membantu pertumbuhan benih tersebut.\n\n"
-    "Bulbasaur dikenal sebagai Pokémon yang ramah, setia, dan cukup tangguh. Meskipun memiliki penampilan yang kecil dan menggemaskan, ia mampu menggunakan berbagai kemampuan bertipe Rumput untuk melindungi diri dan menghadapi lawan. Seiring bertambahnya usia dan kekuatannya, benih di punggung Bulbasaur akan tumbuh semakin besar hingga akhirnya mekar menjadi bunga saat ia berevolusi menjadi Ivysaur, lalu menjadi Venusaur. Dengan kekuatan alam dan sifatnya yang setia, Bulbasaur merupakan Pokémon yang dapat diandalkan dalam berbagai petualangan. 🌱",
+    "Sejak lahir, terdapat benih tanaman misterius yang tertanam di punggungnya. Seiring Bulbasaur menyerap sinar matahari dan bertumbuh besar, benih tersebut perlahan berkembang menjadi tunas yang dipenuhi nutrisi alami.\n\nBulbasaur sangat menyukai tempat-tempat hangat yang disinari matahari secara langsung. Ketika merasa terancam atau hendak menyerang, ia dapat memanjangkan sulur-sulur kuat dari dalam tubuhnya untuk mencambuk atau mengikat musuh.",
     basePower: 318,
     skills: ["Vine Whip", "Razor Leaf", "Sleep Powder", "Solar Beam"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Destiny Deoxys
+    ],
+    height: "0.7 m",
+    weight: "6.9 kg",
+    category: "Seed Pokémon",
+    ability: "Overgrow",
+    weaknesses: ["Fire", "Psychic", "Flying", "Ice"],
+    stats: {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Atk": 65,
+      "Sp. Def": 65,
+      "Speed": 45,
+    },
+    evolutions: ["Bulbasaur", "Ivysaur", "Venusaur"],
   ),
+ 
   // 2
   Pokemon(
     name: "Charmander",
     image: "assets/charmander.jpg",
     type: "Fire",
     description:
-    "Bulbasaur memiliki benih tanaman di punggungnya sejak lahir. Benih tersebut merupakan bagian penting dari tubuhnya karena menyimpan energi yang dibutuhkan untuk pertumbuhan dan perkembangannya. Seiring bertambahnya usia, benih itu akan tumbuh semakin besar mengikuti perkembangan tubuh Bulbasaur. Ia juga dapat menyerap energi dari sinar matahari untuk membantu proses pertumbuhan benih tersebut.\n\n"
-    "Selain itu, benih di punggung Bulbasaur akan terus mengalami perubahan seiring pertumbuhan dan perkembangan tubuhnya. Ketika benih tersebut semakin besar, Bulbasaur akan menjadi semakin kuat dan mulai menunjukkan tanda-tanda evolusi. Benih itu perlahan akan berkembang menjadi kuncup bunga ketika Bulbasaur berevolusi menjadi Ivysaur. Setelah mencapai tahap evolusi terakhir, kuncup tersebut akan mekar menjadi bunga besar saat ia menjadi Venusaur. Proses ini menunjukkan hubungan erat antara Bulbasaur dan tanaman yang tumbuh di punggungnya, yang menjadi sumber energi sekaligus ciri khasnya sebagai Pokémon bertipe Rumput dan Racun. 🌱.",
+    "Api di ujung ekornya adalah indikator utama dari emosi dan vitalitas hidupnya. Saat Charmander merasa senang atau bersemangat, apinya akan membara terang, sedangkan saat ia lemah atau sakit, apinya akan meredup hingga hampir padam.\n\nJika kondisi tubuh Charmander sangat prima, ekornya bahkan bisa memancarkan kepulan asap tipis dengan nyala api yang cukup panas untuk melelehkan benda di sekitarnya. Hujan deras bisa menjadi ancaman serius bagi keselamatan fisiknya.",
     basePower: 309,
     skills: ["Scratch", "Ember", "Flamethrower", "Fire Spin"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/r12w4iRBLp4/hqdefault.jpg", // Pokémon the Movie: I Choose You!
+      "https://img.youtube.com/vi/8Tx9htcJFf0/hqdefault.jpg", // Pokémon: The First Movie
+      "https://img.youtube.com/vi/PHap21gpziY/hqdefault.jpg", // Detective Pikachu (Trailer 2)
+    ],
+    height: "0.6 m",
+    weight: "8.5 kg",
+    category: "Lizard Pokémon",
+    ability: "Blaze",
+    weaknesses: ["Water", "Ground", "Rock"],
+    stats: {
+      "HP": 39,
+      "Attack": 52,
+      "Defense": 43,
+      "Sp. Atk": 60,
+      "Sp. Def": 50,
+      "Speed": 65,
+    },
+    evolutions: ["Charmander", "Charmeleon", "Charizard"],
   ),
+ 
   // 3
   Pokemon(
     name: "Dragonite",
     image: "assets/dragonite.jpg",
-    type: "Dragon",
+    type: "Dragon/Flying",
     description:
-    "Dragonite adalah Pokémon bertipe Naga dan Terbang yang dikenal karena sifatnya yang baik hati dan suka menolong. Ia sering membantu kapal yang karam di laut serta menyelamatkan orang-orang yang sedang dalam bahaya. Meskipun memiliki tubuh besar dan kekuatan luar biasa, Dragonite dikenal ramah dan peduli terhadap makhluk lain.\n\n"
-    "Dragonite juga memiliki kemampuan terbang yang sangat cepat dan mampu mengelilingi dunia hanya dalam waktu 16 jam. Selain itu, ia memiliki kecerdasan tinggi, daya tahan kuat, dan kemampuan bertarung yang hebat. Perpaduan antara kekuatan dan sifatnya yang suka menolong menjadikan Dragonite sebagai Pokémon yang istimewa. 🐉",
+    "Dikenal sebagai 'Penjaga Lautan' yang sangat pemurah dan bijaksana, Dragonite sering kali membantu menuntun kapal yang karam di tengah badai menuju daratan dengan aman. Wataknya yang lembut membuatnya dicintai oleh para pelaut.\n\nMeskipun memiliki perawakan tubuh yang besar dan terkesan berat, Dragonite sanggup terbang membelah udara dengan kecepatan luar biasa. Ia mampu mengelilingi seluruh permukaan bumi hanya dalam waktu sekitar 16 jam.",
     basePower: 600,
     skills: ["Dragon Claw", "Outrage", "Hurricane", "Hyper Beam"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/sO2g0vO4tNk/hqdefault.jpg", // Hoopa and the Clash of Ages
+      "https://img.youtube.com/vi/S_uE8kX0CkY/hqdefault.jpg", // Detective Pikachu (Special Preview)
+      "https://img.youtube.com/vi/TTJcPaFk9yI/hqdefault.jpg", // Mewtwo Strikes Back (Messenger Scene)
+    ],
+    height: "2.2 m",
+    weight: "210.0 kg",
+    category: "Dragon Pokémon",
+    ability: "Inner Focus",
+    weaknesses: ["Ice", "Fairy", "Dragon", "Rock"],
+    stats: {
+      "HP": 91,
+      "Attack": 134,
+      "Defense": 95,
+      "Sp. Atk": 100,
+      "Sp. Def": 100,
+      "Speed": 80,
+    },
+    evolutions: ["Dratini", "Dragonair", "Dragonite"],
   ),
+ 
   // 4
   Pokemon(
     name: "Eevee",
     image: "assets/eevee.jpg",
     type: "Normal",
     description:
-    "Eevee adalah Pokémon bertipe Normal yang memiliki tubuh kecil, bulu berwarna cokelat, telinga panjang, serta ekor lebat dengan ujung berwarna krem. Ia dikenal karena struktur genetiknya yang tidak stabil dan sangat unik, sehingga memungkinkannya berevolusi menjadi berbagai wujud yang berbeda. Perubahan tersebut dapat dipengaruhi oleh lingkungan dan kondisi tertentu yang dialaminya.\n\n"
-    "Eevee memiliki sifat yang ramah, lincah, dan mudah beradaptasi dengan lingkungan sekitarnya. Keunikan genetiknya membuatnya mampu berevolusi menjadi berbagai Pokémon dengan tipe dan kemampuan yang berbeda, seperti Vaporeon, Jolteon, Flareon, Espeon, dan Umbreon. Dengan potensi evolusi yang beragam, Eevee menjadi salah satu Pokémon yang paling unik dan menarik di dunia Pokémon. 🦊",
+    "Memiliki struktur genetik yang sangat tidak stabil dan unik di dunia Pokémon. Karakteristik khusus ini membuatnya sangat peka terhadap perubahan lingkungan serta elemen-elemen eksternal di sekitarnya.\n\nKarena keunikan DNA tersebut, Eevee dapat berevolusi menjadi berbagai wujud elemen yang berbeda-beda—seperti api, air, listrik, hingga bayangan—tergantung pada batu evolusi atau tingkat ikatan emosional dengan pelatihnya.",
     basePower: 325,
     skills: ["Quick Attack", "Bite", "Swift", "Take Down"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/84U03g1J7E0/hqdefault.jpg", // The Power of Us
+      "https://img.youtube.com/vi/fXaeB7dO7iY/hqdefault.jpg", // Eevee & Friends Short
+      "https://img.youtube.com/vi/CxibZuMcC5M/hqdefault.jpg", // Giratina and the Sky Warrior
+    ],
+    height: "0.3 m",
+    weight: "6.5 kg",
+    category: "Evolution Pokémon",
+    ability: "Run Away",
+    weaknesses: ["Fighting"],
+    stats: {
+      "HP": 55,
+      "Attack": 55,
+      "Defense": 50,
+      "Sp. Atk": 45,
+      "Sp. Def": 65,
+      "Speed": 55,
+    },
+    evolutions: [
+      "Eevee",
+      "Vaporeon",
+      "Jolteon",
+      "Flareon",
+      "Espeon",
+      "Umbreon",
+      "Leafeon",
+      "Glaceon",
+      "Sylveon",
+    ],
   ),
+ 
   // 5
   Pokemon(
     name: "Gengar",
     image: "assets/gengar.jpg",
-    type: "Ghost",
+    type: "Ghost/Poison",
     description:
-    "Gengar adalah Pokémon bertipe Hantu dan Racun yang memiliki tubuh berwarna ungu gelap, mata merah menyala, serta senyum lebar yang menyeramkan. Ia dikenal suka bersembunyi di dalam bayangan dan mendekati mangsanya tanpa diketahui. Ketika Gengar berada di dekat seseorang, suhu di sekitarnya dapat turun secara drastis hingga terasa sangat dingin, seolah-olah udara di sekelilingnya membeku.\n\n"
-    "Gengar merupakan Pokémon yang licik dan senang mengejutkan orang lain dengan kemunculannya yang tiba-tiba. Ia mampu menyelinap ke dalam bayangan, bergerak tanpa suara, dan memanfaatkan kegelapan untuk menyembunyikan keberadaannya. Meskipun penampilannya terlihat menyeramkan, Gengar memiliki kepribadian yang unik dan sering digambarkan sebagai Pokémon yang suka bermain-main dengan membuat orang terkejut. 👻",
+    "Gemar bersembunyi rapat di dalam bayangan targetnya dan menunggu momen yang tepat untuk melancarkan kejutan. Tanda paling jelas saat Gengar berada dekat denganmu adalah penurunan suhu udara sekitar secara drastis.\n\nKonon, ketika Gengar bersembunyi di dalam bayangan seseorang, ia menyerap panas tubuh korban hingga orang tersebut merasa menggigil kedinginan. Meringai lebar adalah ciri khasnya saat berhasil menakut-nakuti mangsanya.",
     basePower: 500,
     skills: ["Shadow Ball", "Sludge Bomb", "Hypnosis", "Dream Eater"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/1roy4o4tqQM/hqdefault.jpg", // Detective Pikachu (Arena Battle)
+      "https://img.youtube.com/vi/aWjL2i2uR0U/hqdefault.jpg", // Volcanion & the Mechanical Marvel
+      "https://img.youtube.com/vi/0Qt70H4oMXI/hqdefault.jpg", // Destiny Deoxys (Alternative Cut)
+    ],
+    height: "1.5 m",
+    weight: "40.5 kg",
+    category: "Shadow Pokémon",
+    ability: "Cursed Body",
+    weaknesses: ["Ground", "Ghost", "Psychic", "Dark"],
+    stats: {
+      "HP": 60,
+      "Attack": 65,
+      "Defense": 60,
+      "Sp. Atk": 130,
+      "Sp. Def": 75,
+      "Speed": 110,
+    },
+    evolutions: ["Gastly", "Haunter", "Gengar"],
   ),
+ 
   // 6
   Pokemon(
     name: "Jigglypuff",
     image: "assets/jigglypuff.jpg",
-    type: "Fairy",
+    type: "Normal/Fairy",
     description:
-    "Jigglypuff adalah Pokémon bertipe Normal dan Peri yang memiliki tubuh bulat berwarna merah muda, mata besar berwarna biru, serta telinga kecil yang menggemaskan. Ia dikenal karena suaranya yang merdu dan kemampuannya menyanyikan lagu dengan melodi yang lembut. Jigglypuff dapat mengembangkan tubuhnya untuk mengatur napas saat bernyanyi, sehingga mampu menghasilkan suara yang stabil dan bertahan lama.\n\n"
-    "Lagu yang dinyanyikan Jigglypuff memiliki efek khusus yang dapat membuat siapa pun yang mendengarnya tertidur lelap, termasuk lawan-lawannya. Ia biasanya terus bernyanyi hingga orang-orang di sekitarnya terlelap, meskipun terkadang merasa kesal ketika tidak ada yang mendengarkan sampai selesai. Karena itu, Jigglypuff sering membawa spidol untuk menggambar wajah orang-orang yang tertidur akibat nyanyiannya. 🎤🌸",
+    "Mampu membengkakkan tubuhnya yang bulat elastis untuk memuat pasokan udara yang sangat banyak di dalam paru-parunya. Hal ini dilakukannya agar ia bisa menyanyikan melodi merdu dalam durasi yang sangat panjang.\n\nGelombang suara yang dipancarkan saat ia bernyanyi memiliki frekuensi khusus yang sanggup membuat siapa saja yang mendengarnya tertidur seketika. Jika pendengarnya tertidur sebelum lagunya selesai, Jigglypuff kerap merasa kesal dan mengembungkan pipinya.",
     basePower: 270,
     skills: ["Sing", "Pound", "Disarming Voice", "Rest"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/1k0pUo5Zp-s/hqdefault.jpg", // Pikachu's Vacation
+      "https://img.youtube.com/vi/WrJDKyFpmGg/hqdefault.jpg", // Spell of the Unown: Entei
+      "https://img.youtube.com/vi/-cW2nfnLHkk/hqdefault.jpg", // Pokémon 3: The Movie
+    ],
+    height: "0.5 m",
+    weight: "5.5 kg",
+    category: "Balloon Pokémon",
+    ability: "Cute Charm",
+    weaknesses: ["Poison", "Steel"],
+    stats: {
+      "HP": 115,
+      "Attack": 45,
+      "Defense": 20,
+      "Sp. Atk": 45,
+      "Sp. Def": 25,
+      "Speed": 20,
+    },
+    evolutions: ["Igglybuff", "Jigglypuff", "Wigglytuff"],
   ),
+ 
   // 7
   Pokemon(
     name: "Lucario",
     image: "assets/lucario.jpg",
-    type: "Steel",
+    type: "Fighting/Steel",
     description:
-    "Lucario adalah Pokémon bertipe Petarung dan Baja yang memiliki tubuh ramping, bulu berwarna biru dan hitam, serta tonjolan menyerupai duri di bagian tangan dan dadanya. Ia dikenal karena kemampuannya membaca dan mengendalikan gelombang aura yang dipancarkan oleh makhluk hidup di sekitarnya. Dengan kemampuan tersebut, Lucario dapat mendeteksi keberadaan lawan dari jarak jauh, bahkan ketika lawannya bersembunyi atau berada di balik suatu penghalang.\n\n"
-    "Selain memiliki kemampuan aura yang luar biasa, Lucario merupakan Pokémon yang cerdas, tangguh, dan setia kepada pelatihnya. Ia mampu menggunakan aura untuk memperkuat serangan serta melancarkan jurus kuat seperti Aura Sphere. Lucario juga dapat merasakan emosi dan niat makhluk lain melalui aura yang mereka pancarkan. Kombinasi antara kecerdasan, kekuatan fisik, dan penguasaan aura menjadikannya Pokémon petarung yang sangat hebat dan sulit dikalahkan. 🔵🐺",
+    "Memiliki kemampuan istimewa untuk mendeteksi dan mengendalikan gelombang energi yang dikenal sebagai 'Aura'. Melalui aliran aura ini, Lucario bisa mengetahui kondisi emosi serta niat dari makhluk hidup di sekitarnya.\n\nKemampuan sensorik yang luar biasa ini memungkinkannya untuk memetakan lingkungan sekitar serta melacak keberadaan musuh yang tersembunyi dari jarak lebih dari satu kilometer, bahkan tanpa perlu melihatnya secara langsung.",
     basePower: 525,
     skills: ["Aura Sphere", "Close Combat", "Bone Rush", "Force Palm"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/7vc-FhG682E/hqdefault.jpg", // Lucario and the Mystery of Mew (Trailer Utama)
+      "https://img.youtube.com/vi/5E4N5KDwUeg/hqdefault.jpg", // Lucario and the Mystery of Mew (Teaser)
+      "https://img.youtube.com/vi/32k8JTOftMA/hqdefault.jpg", // Destiny Deoxys (Official Promo)
+    ],
+    height: "1.2 m",
+    weight: "54.0 kg",
+    category: "Aura Pokémon",
+    ability: "Steadfast",
+    weaknesses: ["Fire", "Fighting", "Ground"],
+    stats: {
+      "HP": 70,
+      "Attack": 110,
+      "Defense": 70,
+      "Sp. Atk": 115,
+      "Sp. Def": 70,
+      "Speed": 90,
+    },
+    evolutions: ["Riolu", "Lucario"],
   ),
+ 
   // 8
   Pokemon(
     name: "Pikachu",
     image: "assets/pikachu.jpg",
     type: "Electric",
     description:
-    "Pikachu adalah Pokémon bertipe Listrik yang memiliki tubuh kecil berwarna kuning, telinga panjang dengan ujung hitam, pipi merah, serta ekor berbentuk seperti petir. Ia menyimpan energi listrik di dalam kantung khusus pada kedua pipinya. Energi tersebut dapat dilepaskan dalam bentuk sengatan listrik ketika Pikachu merasa terancam atau harus melindungi dirinya. Semakin banyak energi yang terkumpul, semakin kuat pula serangan listrik yang dapat dihasilkannya.\n\n"
-    "Pikachu dikenal sebagai Pokémon yang ceria, lincah, dan setia kepada pelatihnya. Ia mampu menghasilkan berbagai serangan listrik yang kuat, seperti Thunderbolt, untuk menghadapi lawan atau melindungi teman-temannya. Selain itu, Pikachu dapat mengisi kembali energi listriknya dengan menyerap listrik dari lingkungan sekitar. Meskipun ukurannya kecil, Pikachu memiliki keberanian dan kekuatan yang luar biasa, menjadikannya salah satu Pokémon yang paling dikenal dan disukai di dunia Pokémon. ⚡🐭",
+    "Menyimpan energi listrik secara terus-menerus di dalam dua kantung pipinya yang berwarna merah cerah. Saat merasa terancam atau ingin berkomunikasi, ia memancarkan aliran listrik berkekuatan tinggi dari pipi tersebut.\n\nKetika sekelompok Pikachu berkumpul di satu area, akumulasi muatan listrik yang dikeluarkan secara bersamaan bahkan mampu memicu timbulnya badai petir lokal serta mengganggu fungsi peralatan elektronik di sekitarnya.",
     basePower: 320,
     skills: ["Thunderbolt", "Quick Attack", "Iron Tail", "Electro Ball"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/WWug-d-NSQA/hqdefault.jpg", // Giratina and the Sky Warrior
+      "https://img.youtube.com/vi/kYQ20v-FqL8/hqdefault.jpg", // Pokémon the Movie 2000: The Power of One
+      "https://img.youtube.com/vi/j5p9sW_lR_E/hqdefault.jpg", // Pokémon: Mewtwo Returns
+    ],
+    height: "0.4 m",
+    weight: "6.0 kg",
+    category: "Mouse Pokémon",
+    ability: "Static",
+    weaknesses: ["Ground"],
+    stats: {
+      "HP": 35,
+      "Attack": 55,
+      "Defense": 40,
+      "Sp. Atk": 50,
+      "Sp. Def": 50,
+      "Speed": 90,
+    },
+    evolutions: ["Pichu", "Pikachu", "Raichu"],
   ),
+ 
   // 9
   Pokemon(
     name: "Snorlax",
     image: "assets/snorlax.jpg",
     type: "Normal",
     description:
-    "Snorlax adalah Pokémon bertipe Normal yang memiliki tubuh sangat besar, perut buncit, serta bulu berwarna biru kehijauan dengan bagian perut berwarna krem. Ia dikenal karena kebiasaannya menghabiskan sebagian besar waktunya untuk tidur dan makan. Snorlax memiliki nafsu makan yang sangat besar dan mampu mengonsumsi hingga 400 kg makanan setiap hari. Setelah makan hingga kenyang, ia biasanya langsung tertidur lelap dan sulit dibangunkan.\n\n"
-    "Meskipun terlihat malas dan selalu mengantuk, Snorlax memiliki kekuatan fisik yang luar biasa. Tubuhnya yang besar membuatnya mampu menahan berbagai serangan, sementara sistem pencernaannya sangat kuat sehingga dapat mencerna berbagai jenis makanan, bahkan yang tidak bisa dimakan oleh Pokémon lain. Snorlax juga dikenal memiliki perut yang tahan terhadap berbagai racun. Walaupun sering menghalangi jalan karena tertidur di tempat yang tidak biasa, Snorlax sebenarnya merupakan Pokémon yang tenang dan tidak berbahaya selama tidak diganggu. 💤🍙",
+    "Menghabiskan sebagian besar waktunya sehari-hari hanya untuk makan dan tidur. Pokémon ini tidak akan merasa puas sebelum menyantap setidaknya 400 kg makanan setiap harinya hingga perutnya membesar.\n\nCairan asam di dalam lambungnya sangat pekat dan mematikan, memungkinkannya mencerna makanan basi, berjamur, hingga bahan beracun tanpa mengalami gangguan pencernaan sedikit pun.",
     basePower: 540,
     skills: ["Body Slam", "Rest", "Snore", "Heavy Slam"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/yR6iG4v39K4/hqdefault.jpg", // Pokémon Generations Episode
+      "https://img.youtube.com/vi/b_Kq0g4wM2E/hqdefault.jpg", // Pokémon Journeys Special
+      "https://img.youtube.com/vi/9xG9-V_0_Z4/hqdefault.jpg", // Arceus and the Jewel of Life
+    ],
+    height: "2.1 m",
+    weight: "460.0 kg",
+    category: "Sleeping Pokémon",
+    ability: "Immunity",
+    weaknesses: ["Fighting"],
+    stats: {
+      "HP": 160,
+      "Attack": 110,
+      "Defense": 65,
+      "Sp. Atk": 65,
+      "Sp. Def": 110,
+      "Speed": 30,
+    },
+    evolutions: ["Munchlax", "Snorlax"],
   ),
+ 
   // 10
   Pokemon(
     name: "Squirtle",
     image: "assets/squirtle.jpg",
     type: "Water",
     description:
-    "Squirtle adalah Pokémon bertipe Air yang memiliki tubuh kecil berwarna biru, mata besar berwarna cokelat kemerahan, serta tempurung keras berwarna cokelat di punggungnya. Tempurung tersebut berfungsi sebagai pelindung tubuhnya dari serangan musuh dan bahaya di sekitarnya. Saat merasa terancam, Squirtle dapat menarik kepala, kaki, dan ekornya ke dalam tempurung untuk melindungi diri. Ia juga mampu menyemprotkan air bertekanan tinggi dari mulutnya untuk menyerang lawan atau menghalau ancaman.\n\n"
-    "Squirtle dikenal sebagai Pokémon yang ceria, lincah, dan memiliki kemampuan berenang yang baik. Ia dapat bergerak dengan mudah di dalam air menggunakan kaki berselaput dan ekornya. Selain itu, Squirtle mampu mengendalikan serangan air untuk menghadapi lawan, termasuk jurus Water Gun yang menjadi salah satu kemampuan khasnya. Seiring bertambahnya usia dan kekuatannya, Squirtle dapat berevolusi menjadi Wartortle, lalu menjadi Blastoise yang memiliki kekuatan air jauh lebih besar. 🐢💦",
+    "Tempurung keras di punggungnya tidak hanya bertindak sebagai pelindung fisik yang tangguh saat menarik diri dari bahaya, tetapi juga membantu mengurangi hambatan air saat ia berenang.\n\nBentuk tempurungnya yang aerodinamis memungkinkannya meluncur bebas di dalam air dengan kecepatan tinggi. Saat bertarung, Squirtle sanggup menyemprotkan jet air bertekanan tinggi secara akurat langsung dari mulutnya.",
     basePower: 314,
     skills: ["Water Gun", "Bubble", "Aqua Tail", "Hydro Pump"],
-    movies: [],
+    movies: [
+      "https://img.youtube.com/vi/W4Zt7w9_Dk0/hqdefault.jpg", // Squirtle Squad Classic Special
+      "https://img.youtube.com/vi/2d7aJk-W5yY/hqdefault.jpg", // Pokémon: The Rise of Darkrai
+      "https://img.youtube.com/vi/xH2T9y-M0Lk/hqdefault.jpg", // Pokémon: Zoroark Master of Illusions
+    ],
+    height: "0.5 m",
+    weight: "9.0 kg",
+    category: "Tiny Turtle Pokémon",
+    ability: "Torrent",
+    weaknesses: ["Electric", "Grass"],
+    stats: {
+      "HP": 44,
+      "Attack": 48,
+      "Defense": 65,
+      "Sp. Atk": 50,
+      "Sp. Def": 64,
+      "Speed": 43,
+    },
+    evolutions: ["Squirtle", "Wartortle", "Blastoise"],
   ),
 ];
