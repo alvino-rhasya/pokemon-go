@@ -41,9 +41,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 309,
     skills: ["Scratch", "Ember", "Flamethrower", "Fire Spin"],
     movies: [
-      "https://img.youtube.com/vi/r12w4iRBLp4/hqdefault.jpg", // Pokémon the Movie: I Choose You!
-      "https://img.youtube.com/vi/8Tx9htcJFf0/hqdefault.jpg", // Pokémon: The First Movie
-      "https://img.youtube.com/vi/PHap21gpziY/hqdefault.jpg", // Detective Pikachu (Trailer 2)
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Detective Pikachu (Trailer 2)
     ],
     height: "0.6 m",
     weight: "8.5 kg",
@@ -71,9 +71,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 600,
     skills: ["Dragon Claw", "Outrage", "Hurricane", "Hyper Beam"],
     movies: [
-      "https://img.youtube.com/vi/sO2g0vO4tNk/hqdefault.jpg", // Hoopa and the Clash of Ages
-      "https://img.youtube.com/vi/S_uE8kX0CkY/hqdefault.jpg", // Detective Pikachu (Special Preview)
-      "https://img.youtube.com/vi/TTJcPaFk9yI/hqdefault.jpg", // Mewtwo Strikes Back (Messenger Scene)
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Mewtwo Strikes Back (Messenger Scene)
     ],
     height: "2.2 m",
     weight: "210.0 kg",
@@ -101,9 +101,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 325,
     skills: ["Quick Attack", "Bite", "Swift", "Take Down"],
     movies: [
-      "https://img.youtube.com/vi/84U03g1J7E0/hqdefault.jpg", // The Power of Us
-      "https://img.youtube.com/vi/fXaeB7dO7iY/hqdefault.jpg", // Eevee & Friends Short
-      "https://img.youtube.com/vi/CxibZuMcC5M/hqdefault.jpg", // Giratina and the Sky Warrior
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Giratina and the Sky Warrior
     ],
     height: "0.3 m",
     weight: "6.5 kg",
@@ -141,9 +141,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 500,
     skills: ["Shadow Ball", "Sludge Bomb", "Hypnosis", "Dream Eater"],
     movies: [
-      "https://img.youtube.com/vi/1roy4o4tqQM/hqdefault.jpg", // Detective Pikachu (Arena Battle)
-      "https://img.youtube.com/vi/aWjL2i2uR0U/hqdefault.jpg", // Volcanion & the Mechanical Marvel
-      "https://img.youtube.com/vi/0Qt70H4oMXI/hqdefault.jpg", // Destiny Deoxys (Alternative Cut)
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Destiny Deoxys (Alternative Cut)
     ],
     height: "1.5 m",
     weight: "40.5 kg",
@@ -171,9 +171,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 270,
     skills: ["Sing", "Pound", "Disarming Voice", "Rest"],
     movies: [
-      "https://img.youtube.com/vi/1k0pUo5Zp-s/hqdefault.jpg", // Pikachu's Vacation
-      "https://img.youtube.com/vi/WrJDKyFpmGg/hqdefault.jpg", // Spell of the Unown: Entei
-      "https://img.youtube.com/vi/-cW2nfnLHkk/hqdefault.jpg", // Pokémon 3: The Movie
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Pokémon 3: The Movie
     ],
     height: "0.5 m",
     weight: "5.5 kg",
@@ -201,9 +201,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 525,
     skills: ["Aura Sphere", "Close Combat", "Bone Rush", "Force Palm"],
     movies: [
-      "https://img.youtube.com/vi/7vc-FhG682E/hqdefault.jpg", // Lucario and the Mystery of Mew (Trailer Utama)
-      "https://img.youtube.com/vi/5E4N5KDwUeg/hqdefault.jpg", // Lucario and the Mystery of Mew (Teaser)
-      "https://img.youtube.com/vi/32k8JTOftMA/hqdefault.jpg", // Destiny Deoxys (Official Promo)
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Destiny Deoxys (Official Promo)
     ],
     height: "1.2 m",
     weight: "54.0 kg",
@@ -231,9 +231,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 320,
     skills: ["Thunderbolt", "Quick Attack", "Iron Tail", "Electro Ball"],
     movies: [
-      "https://img.youtube.com/vi/WWug-d-NSQA/hqdefault.jpg", // Giratina and the Sky Warrior
-      "https://img.youtube.com/vi/kYQ20v-FqL8/hqdefault.jpg", // Pokémon the Movie 2000: The Power of One
-      "https://img.youtube.com/vi/j5p9sW_lR_E/hqdefault.jpg", // Pokémon: Mewtwo Returns
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Pokémon: Mewtwo Returns
     ],
     height: "0.4 m",
     weight: "6.0 kg",
@@ -261,9 +261,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 540,
     skills: ["Body Slam", "Rest", "Snore", "Heavy Slam"],
     movies: [
-      "https://img.youtube.com/vi/yR6iG4v39K4/hqdefault.jpg", // Pokémon Generations Episode
-      "https://img.youtube.com/vi/b_Kq0g4wM2E/hqdefault.jpg", // Pokémon Journeys Special
-      "https://img.youtube.com/vi/9xG9-V_0_Z4/hqdefault.jpg", // Arceus and the Jewel of Life
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Arceus and the Jewel of Life
     ],
     height: "2.1 m",
     weight: "460.0 kg",
@@ -291,9 +291,9 @@ final List<Pokemon> dataPokemon = [
     basePower: 314,
     skills: ["Water Gun", "Bubble", "Aqua Tail", "Hydro Pump"],
     movies: [
-      "https://img.youtube.com/vi/W4Zt7w9_Dk0/hqdefault.jpg", // Squirtle Squad Classic Special
-      "https://img.youtube.com/vi/2d7aJk-W5yY/hqdefault.jpg", // Pokémon: The Rise of Darkrai
-      "https://img.youtube.com/vi/xH2T9y-M0Lk/hqdefault.jpg", // Pokémon: Zoroark Master of Illusions
+      "https://img.youtube.com/vi/c2edLO4GxGs/hqdefault.jpg", // Mewtwo Strikes Back: Evolution
+      "https://img.youtube.com/vi/Ux6WBTgMhls/hqdefault.jpg", // Detective Pikachu (Trailer 1)
+      "https://img.youtube.com/vi/nKDWO2qY1Pk/hqdefault.jpg", // Pokémon: Zoroark Master of Illusions
     ],
     height: "0.5 m",
     weight: "9.0 kg",

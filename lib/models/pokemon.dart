@@ -1,3 +1,5 @@
+
+
 class Pokemon {
   //properties
   final String name;
@@ -33,7 +35,7 @@ class Pokemon {
     required this.ability,
     required this.weaknesses,
     required this.stats,
-    this.evolutions,
+    required this.evolutions,
   });
  
   //  CTRL + ALT + L => REFORMAT CODE

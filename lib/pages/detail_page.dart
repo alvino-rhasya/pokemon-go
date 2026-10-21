@@ -5,8 +5,9 @@ import 'package:flutter_apps/widgets/type_chip.dart';
 
 class DetailPage extends StatefulWidget {
   final Pokemon pokemon;
+  final bool isFavorite;
 
-  const DetailPage({super.key, required this.pokemon});
+  const DetailPage({super.key, required this.pokemon, required this.isFavorite});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
