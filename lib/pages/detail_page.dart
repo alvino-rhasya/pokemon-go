@@ -7,7 +7,10 @@ class DetailPage extends StatefulWidget {
   final Pokemon pokemon;
   final bool isFavorite;
 
-  const DetailPage({super.key, required this.pokemon, required this.isFavorite});
+  final VoidCallback onTap;
+  final VoidCallback onFavoriteTap;
+
+  const DetailPage({super.key, required this.pokemon, required this.isFavorite, required this.onTap, required this.onFavoriteTap});
 
   @override
   State<DetailPage> createState() => _DetailPageState();
