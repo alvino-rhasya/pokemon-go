@@ -5,12 +5,18 @@ import 'package:flutter_apps/widgets/type_chip.dart';
 
 class DetailPage extends StatefulWidget {
   final Pokemon pokemon;
+  final String type;
   final bool isFavorite;
 
   final VoidCallback onTap;
-  final VoidCallback onFavoriteTap;
 
-  const DetailPage({super.key, required this.pokemon, required this.isFavorite, required this.onTap, required this.onFavoriteTap});
+  const DetailPage({
+    super.key,
+    required this.pokemon,
+    required this.isFavorite,
+    required this.onTap,
+    required this.type,
+  });
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -26,9 +32,13 @@ class _DetailPageState extends State<DetailPage> {
           style: TextStyle(fontFamily: 'PokemonHollow'),
         ),
         actions: [
-          Icon(Icons.favorite_border_rounded),
-          SizedBox(width: 15),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.favorite_border_rounded),
+          ),
+          SizedBox(width: 15)
         ],
+        centerTitle: true,
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -42,7 +52,10 @@ class _DetailPageState extends State<DetailPage> {
                       tag: widget.pokemon.name,
                       child: ClipRRect(
                         borderRadius: BorderRadiusGeometry.circular(40),
-                        child: Image.asset(widget.pokemon.image, fit: BoxFit.cover),
+                        child: Image.asset(
+                          widget.pokemon.image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

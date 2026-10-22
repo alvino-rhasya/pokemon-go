@@ -24,19 +24,33 @@ class PokemonCard extends StatelessWidget {
       onTap: onTap,
       child: Card(
         elevation: 6,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         clipBehavior: Clip.antiAlias,
         child: Column(
           children: [
-            Hero(
-              tag: pokemon.name,
-              child: Image.asset(
-                pokemon.image,
-                fit: BoxFit.cover,
-                width: double.infinity,
-              ),
+            Stack(
+              children: [
+                Hero(
+                  tag: pokemon.name,
+                  child: Image.asset(
+                    pokemon.image,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  onPressed: () {
+                    onFavoriteTap();
+                  },
+                  child: isFavorite 
+                  ? Icon(Icons.favorite, color: Colors.red,) 
+                  : Icon(Icons.favorite_border, color: Colors.white,)
+                  ),
+                ),
+              ],
             ),
           ],
         ),

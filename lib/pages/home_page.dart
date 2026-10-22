@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           pokemon: pokemon,
           isFavorite: isFavorite,
           onTap: () {},
-          onFavoriteTap: () {},
+          type: '',
         ),
       ),
     );
@@ -108,7 +108,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Switch(value: isSwitch, onChanged: (value) {}),
+                Switch(
+                  value: _showFavoriteOnly,
+                  onChanged: (value) {
+                    setState(() {
+                      _showFavoriteOnly = value;
+                    });
+                  },
+                ),
               ],
             ),
           ),
@@ -134,6 +141,7 @@ class _HomePageState extends State<HomePage> {
                         onFavoriteTap: () {
                           _toggleFavorite(pokemon.name);
                         },
+                        type: pokemon.type,
                       );
                     },
                     itemCount: filtered.length,
@@ -145,6 +153,9 @@ class _HomePageState extends State<HomePage> {
                   return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: column,
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 12,
+                      childAspectRatio: 2 / 4,
                     ),
                     itemBuilder: (context, index) {
                       final pokemon = filtered[index];
@@ -154,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                       return PokemonCard(
                         pokemon: pokemon,
                         isFavorite: isFavorite,
-                        onTap: () => _toggleFavorite(pokemon.name),
+                        onTap: () => _openDetail(pokemon, isFavorite),
                         onFavoriteTap: () => _toggleFavorite(pokemon.name),
                       );
                     },
