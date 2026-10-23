@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_apps/data/pokemon_data.dart';
+import 'package:flutter_apps/models/pokemon.dart';
+import 'package:flutter_apps/pages/detail_page.dart';
+import 'package:flutter_apps/widgets/pokemon_card.dart';
 import 'package:flutter_apps/widgets/pokemon_list.dart';
-import '../data/pokemon_data.dart';
-import '../models/pokemon.dart';
-import '../widgets/pokemon_card.dart';
-import 'detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,18 +30,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  final isSwitch = false;
-
   Future<void> _openDetail(pokemon, bool isFavorite) async {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => DetailPage(
-          pokemon: pokemon,
-          isFavorite: isFavorite,
-          onTap: () {},
-          type: '',
-        ),
+        builder: (_) => DetailPage(pokemon: pokemon, isFavorite: isFavorite, type: '', onTap: () {  },),
       ),
     );
     // ! + =
@@ -55,6 +48,8 @@ class _HomePageState extends State<HomePage> {
       });
     }
   }
+
+  bool isSwitch = false; // gak dipake sample aja
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +74,11 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           "Pokémon GO",
-          style: TextStyle(fontFamily: "PokemonHollow", fontSize: 32),
+          style: TextStyle(
+            fontFamily: "Pokemon",
+            fontSize: 32,
+            color: Colors.amber,
+          ),
         ),
         centerTitle: true,
         actions: [Text('$screenSize')],
@@ -125,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                 //425 Mobile
                 //768 Tablet
                 //1024 Desktop
-                if (constraints.maxWidth <= 425) {
+                if (constraints.maxWidth <= 504) {
                   return ListView.builder(
                     itemBuilder: (context, index) {
                       final pokemon = filtered[index];
@@ -148,14 +147,16 @@ class _HomePageState extends State<HomePage> {
                   );
                 } else {
                   int column = 2;
-                  if (constraints.maxWidth <= 768) column = 2;
-                  if (constraints.maxWidth <= 1084) column = 2;
+                  if (constraints.maxWidth >= 768 && constraints.maxWidth < 1026){
+                    column = 3;
+                  }
+                  if (constraints.maxWidth >= 1024) column = 4;
                   return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: column,
                       crossAxisSpacing: 12,
                       mainAxisSpacing: 12,
-                      childAspectRatio: 2 / 4,
+                      childAspectRatio: 3 / 4,
                     ),
                     itemBuilder: (context, index) {
                       final pokemon = filtered[index];
@@ -164,6 +165,7 @@ class _HomePageState extends State<HomePage> {
                       );
                       return PokemonCard(
                         pokemon: pokemon,
+                        type: filtered[index].type,
                         isFavorite: isFavorite,
                         onTap: () => _openDetail(pokemon, isFavorite),
                         onFavoriteTap: () => _toggleFavorite(pokemon.name),
